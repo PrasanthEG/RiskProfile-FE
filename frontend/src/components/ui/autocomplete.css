@@ -1,0 +1,38 @@
+/* components/ui/autocomplete.css */
+.autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .autocomplete input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .autocomplete-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+    max-height: 150px;
+    overflow-y: auto;
+    color: black;
+  }
+  
+  .autocomplete-list li {
+    padding: 8px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .autocomplete-list li:hover {
+    background: #f0f0f0;
+    color: black;
+  }
+  

@@ -1,0 +1,27 @@
+
+body {
+    font-family: Arial, sans-serif;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+  }
+  
+  div {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .scrollable-container {
+    /* Adjust height as needed */
+    overflow-y: auto;
+    overflow-x: hidden; /* Hide horizontal scroll */
+    padding: 10px;
+    border: 1px solid #ddd; /* Optional styling */
+  }
+
+  
+
+  

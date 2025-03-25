@@ -1,0 +1,748 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+
+header {
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center; /* Aligns logo and text properly */
+    gap: 10px; /* Space between logo & text */
+}
+
+/* Logo */
+.logo_class {
+    height: 70px;
+    width: auto;
+}
+
+
+.org_header {
+    font-size: 24px;
+    font-weight: bold;
+    vertical-align: middle; /* Keeps text aligned with image */
+    line-height: 40px; /* Matches the height of the image */
+}
+
+.logout-btn:hover {
+  background-color: #3109d1;
+}
+
+.page-content {
+  padding: 20px;
+}
+
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.section {
+    margin-bottom: 10px;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 5px;
+    color: #444;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: white;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button {
+    background-color: #28a745;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+li button:hover {
+    background-color: #218838;
+}
+
+li button:nth-child(2) {
+    background-color: #dc3545;
+}
+
+li button:nth-child(2):hover {
+    background-color: #c82333;
+}
+/* Grid-based layout for Admin Dashboard */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.dashboard-layout {
+    display: flex;
+    flex: 1;
+}
+
+/* Overall container */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Layout for sidebar + main content */
+.content-layout {
+    display: flex;
+    flex: 1;
+}
+
+/* Header styling */
+.header {
+    height: 60px;
+    background-color: #ffffff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #ffffff;
+    color: white;
+    padding: 10px;
+    height: calc(100vh - 60px); /* Full height minus header */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+
+div.dashboard-container {
+    display: grid;
+    grid-template-columns: 250px auto;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 0px #ffffff;
+    border: none;
+}
+
+.input-group{
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 0px;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.login_input{
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+.logout-button {
+    background: rgb(117, 106, 180);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+nav.sidebar {
+    background-color: #ffffff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+
+nav.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+nav.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+nav.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    transition: background 0.3s;
+}
+
+nav.sidebar ul li:hover {
+    background: #34495e;
+    color: white;
+}
+
+div.main-content {
+    padding: 20px;
+    border: none;
+    overflow-y: auto;
+}
+
+div.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    border: none;
+}
+
+div.grid-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    
+    color: black;
+}
+
+input, button {
+   
+  
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding-block: 5px;
+    padding-inline: 5px;
+}
+
+button:hover {
+    background: #7676e4;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: black;
+}
+
+
+.grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(300px, 1fr)) !important; /* Exactly 2 columns */
+    gap: 20px;
+    width: 100%;
+    height: 100%; /* Takes full height of its parent */
+    border: none;
+    overflow: auto;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column; /* Makes sure pagination stays at the bottom */
+    min-height: 92%; /* Ensures it fills the available space */
+    border: 1px solid #ddd; /* Optional for visual layout */
+    padding: 10px;
+    max-height: 600px; 
+}
+
+.grid-content {
+    flex-grow: 1; /* Pushes pagination-footer to the bottom */
+    overflow-y: auto; /* Enables scrolling for table */
+    padding: 10px;
+    min-height: 70%;
+}
+
+.pagination-footer {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background: #f0f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky; /* Ensures it stays at the bottom */
+    bottom: 0;
+}
+
+/* 
+
+.grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(300px, 1fr)) 
+    gap: 20px;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 0px 0px #ffffff;
+    border: none;
+    height: 100%; 
+   
+}
+
+.grid-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.pagination-footer {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* Scrollable grid items 
+.grid-item {
+    background: #fff;
+    padding: 20px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 90%;
+    overflow: auto; 
+    max-height: 600px; 
+} */
+
+.grid-item.span-2 {
+    grid-column: span 2;
+}
+
+/* Ensure grid items fill columns */
+.grid-item:nth-child(odd),
+.grid-item:nth-child(even) {
+    width: 90%; /* Ensures full width in assigned column */
+}
+
+/* Table styles */
+.grid-item table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grid-item th, .grid-item td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Responsive: Switch to 1 column on smaller screens */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Switch to single-column layout */
+    }
+}
+
+/* Fixes Pagination in One Line */
+
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 2px 2px; /* Reduced padding */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    background: #b1b1c1;
+}
+
+th {
+    background: #d9e3ef;
+    color: black;
+}
+td {
+    background: #ffffff;
+    color: black;
+}
+
+th.align_right,td.align_right{
+    text-align:  right;
+  }
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+/* Button Link Styling */
+.button-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 12px;
+    
+}
+
+.button-link:hover {
+    color: #0056b3;
+}
+
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto; /* Push to bottom */
+}
+
+.pageLegend{
+    font-weight: bold;
+    color: #333;
+    min-width: 80px; /* Ensures consistent spacing */
+    text-align: center;
+}
+/* Add User Link */
+.add-user-link {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    color: #4461e0;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.add-user-link:hover {
+    color: #5f73d9;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 8px;
+    padding: 2px;
+}
+
+/* Adjust the size of the SVG icons */
+.icon-img {
+    width: 20px;
+    height: 20px;
+}
+
+/******************* LOGIN SECTION ********************/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Login box styling */
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+/* Welcome back title */
+.login-box h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Subtitle styling */
+.sub-text {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Input field styles */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+}
+
+
+a {
+    color: #060101;  /* Default link color (blue) */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #040a10;  /* Darker blue on hover */
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+a:active {
+    color: #04274e; /* Even darker when clicked */
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adjust spacing */
+  }
+  
+  .button-group {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Adjust button spacing */
+    margin-left: auto; /* Push to the right */
+  }
+
+  .top_logo_class {
+    background: #ffffff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding-block: 5px;
+    padding-inline: 5px;
+   
+  }
+
+  .top_logo_class:hover {
+    background: #f7f2f2ec;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding-block: 5px;
+    padding-inline: 5px;
+   
+  }
+
+  .btn-icon-img{
+    width: 25px;
+    height: 25px;
+  }
+  
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 450px;
+    width: 100%;
+}
+
+/* Modal Buttons */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-save {
+    background: #28a745;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.input-style {
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-cancel {
+    background: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.link-container {
+    display: flex;
+    gap: 20px; /* Adds 20px spacing between links */
+    align-items: center;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+.icon-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .icon-button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .disable-btn {
+    background-color: red;
+    color: white;
+  }
+  
+  .enable-btn {
+    background-color: green;
+    color: white;
+  }
+  
+  .tr_highlight {
+    background-color: green;
+    
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.report-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .menu_class_li {
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    color: rgb(11, 10, 10);
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+
+  .portal_name {
+    background: none;
+    border: none;
+    color: #180855;
+    padding: 5px;
+  }
