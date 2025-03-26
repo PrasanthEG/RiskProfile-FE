@@ -26,7 +26,7 @@ const SettingsMenu = () => {
   return (
     <div className="user-menu-container">
       <button className="menu-toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-        <img src="/icons/settings.png" alt="User Menu" />
+        <img src="/icons/Settings.png" alt="User Menu" />
       </button>
 
       <div className={`user-menu ${isOpen ? "active" : ""}`}>
