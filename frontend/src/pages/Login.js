@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/api.js";
+import ForgotPasswordModal from './ForgotPasswordModal';
+
 
 
 
@@ -68,7 +70,11 @@ const Login = () => {
           </div>
           <button type="submit" className="login-btn">Login</button>
           <p>
-            <a href="#" onClick={() => navigate("/forgot-password")}>Forgot Password?</a>
+         
+            <div>
+            {/* Other login components */}
+            <ForgotPasswordModal />
+          </div>
           </p>
         
           {errorMessage && <p className="error-message">{errorMessage}</p>}

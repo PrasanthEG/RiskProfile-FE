@@ -10,7 +10,7 @@ import ResultsPage from "./pages/ResultsPage";
 import AdminDashboard from "./pages/AdminDashboard";
 import User from "./pages/User";
 import ChangePassword from "./pages/ChangePassword";
-import ForgotPassword from "./pages/ForgotPassword";
+//import ForgotPassword from "./pages/ResetPasswordLink";
 import ResetPassword from "./pages/ResetPassword";
 import CategoryTable from "./components/Categories/CategoryTable";
 import RiskTable from "./components/RiskProfile/RiskTable";
@@ -20,6 +20,8 @@ import SessionChecker from "./SessionChecker";
 import Reports from "./pages/Reports";
 import SettingsPage from "./pages/SettingsPage";
 import Unauthorized from "./pages/Unauthorized";
+import ForgotPasswordModal from "./pages/ForgotPasswordModal";
+
 
 function App() {
 
@@ -51,7 +53,7 @@ function App() {
             <Route path="/results" element={<ResultsPage />} />
             <Route path="/users" element={<User />} />
             <Route path="/change-password" element={<ChangePassword />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/forgot-password" element={<ForgotPasswordModal />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/categories" element={<CategoryTable />} />
             <Route path="/risk-profiles" element={<RiskTable />} />
@@ -59,6 +61,7 @@ function App() {
             <Route path="/reports" element={<Reports />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
             <Route path="/settings" element={<SettingsPage /> } />
+
           </Routes>
           </SessionChecker>
         </div>
