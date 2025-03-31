@@ -21,10 +21,11 @@ const Login = () => {
       const data = await loginUser(email, password);
 
       if (data.status === "SUCCESS" && data.access_token) {
+       
         localStorage.setItem("token", data.access_token);
         localStorage.setItem("user_type", data.user_type);
         localStorage.setItem("name", `${data.user_fname} ${data.user_lname}`);
-       
+        
         navigate("/adminDashboard");
       } 
       else if (data.status === "CHANGE_PASSWORD_REQUIRED") {

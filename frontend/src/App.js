@@ -21,6 +21,7 @@ import Reports from "./pages/Reports";
 import SettingsPage from "./pages/SettingsPage";
 import Unauthorized from "./pages/Unauthorized";
 import ForgotPasswordModal from "./pages/ForgotPasswordModal";
+import CreateBasket from "./pages/CreateBasket";
 
 
 function App() {
@@ -61,6 +62,8 @@ function App() {
             <Route path="/reports" element={<Reports />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
             <Route path="/settings" element={<SettingsPage /> } />
+            <Route path="/baskets" element={<CreateBasket /> } />
+
 
           </Routes>
           </SessionChecker>

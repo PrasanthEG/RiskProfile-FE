@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import AddRiskModal from "./AddRiskModal";
 import EditRiskModal from "./EditRiskModal";
 import { API_BASE_URL } from "./../../config";
+import AllocationPage from './AllocationPage';
+
+
+
 
 
 const RiskTable = () => {
@@ -76,8 +80,10 @@ const RiskTable = () => {
 
   return (
     <div>
-      <h1>Risk Profile  Management</h1>
-      <button onClick={() => setIsAddModalOpen(true)} disabled={current_user_type === "MEMBER"} >Add Risk Profile</button>
+      <h1>Risk Profile  Management</h1>  
+
+      <button onClick={() => setIsAddModalOpen(true)} disabled={current_user_type === "MEMBER"} >Add Risk Profile</button> 
+      
       <table>
         <thead>
           <tr>
@@ -119,8 +125,10 @@ const RiskTable = () => {
 
       {isAddModalOpen && <AddRiskModal closeModal={() => setIsAddModalOpen(false)} addRisk={handleAddRisk} refreshRisks={fetchRisks} />}
       {isEditModalOpen && <EditRiskModal risk={selectedRisk} closeModal={() => setIsEditModalOpen(false)} editRisk={handleEditRisk} refreshRisks={fetchRisks} />}
-
-      
+      <br /><br />
+      <div className="App">
+         <AllocationPage />
+    </div>
 
     </div>
   );

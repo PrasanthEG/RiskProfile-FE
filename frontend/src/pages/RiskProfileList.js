@@ -23,7 +23,7 @@ const RiskProfileList = () => {
                 setLoading(false);
                 return;
             }
-
+           
             const response =await fetch(`${API_BASE_URL}/risk_profiles?page=${page}&per_page=5`, {
                 method: "GET",
                 headers: {
