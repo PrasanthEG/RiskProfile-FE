@@ -38,7 +38,7 @@ const SideBar = () => {
         fetchMenus();
     }, []);
 
-    // **Admin menus (full access)**
+
     const adminMenus = [
         { menu_name: "Home", link: "/adminDashboard" },
         { menu_name: "Users", link: "/users" },

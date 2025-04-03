@@ -5,6 +5,7 @@ import { API_BASE_URL } from "./../../config";
 
 const AssetSymbolAutocomplete = ({ assetTypeId, onSymbolSelect }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [companyName, setCompanyName] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [selectedSymbol, setSelectedSymbol] = useState(null);
 
@@ -29,6 +30,7 @@ const AssetSymbolAutocomplete = ({ assetTypeId, onSymbolSelect }) => {
   const handleSymbolSelect = (symbol) => {
     setSelectedSymbol(symbol);
     setSearchTerm(symbol.symbol);
+    setCompanyName(symbol.name)
     setSuggestions([]);
     onSymbolSelect(symbol); // Pass selected symbol data to parent
   };
@@ -45,7 +47,7 @@ const AssetSymbolAutocomplete = ({ assetTypeId, onSymbolSelect }) => {
         <ul className="suggestions">
           {suggestions.map((s, idx) => (
             <li key={idx} onClick={() => handleSymbolSelect(s)}>
-              {s.symbol} - {s.name} 
+               {s.name} - {s.series} ({s.exchange})
             </li>
           ))}
         </ul>

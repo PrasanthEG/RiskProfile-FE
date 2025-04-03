@@ -5,8 +5,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./../styles/createBasket.css";
 import AssetSymbolAutocomplete from "./../components/ui/AssetSymbolAutocomplete"; // Adjust the import path if needed
-import { API_BASE_URL } from "./../config";
+import { API_BASE_URL,HOSTNAME } from "./../config";
 import Modal from 'react-modal';
+import BasketModal from "./BasketModal";
+
+
 
 
 const CreateBasketPage = () => {
@@ -31,6 +34,7 @@ const CreateBasketPage = () => {
       status: 'active'
     };
 
+  const [selectedBasket, setSelectedBasket] = useState(null);
 
   const [basketCreated, setBasketCreated] = useState(false);
   const [basketId, setBasketId] = useState(null);
@@ -39,6 +43,7 @@ const CreateBasketPage = () => {
   const [showForm, setShowForm] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [phase, setPhase] = useState('basket');
+  const [showModal, setShowModal] = useState(false);
 
 
 
@@ -76,6 +81,8 @@ const CreateBasketPage = () => {
   const [thumbOption, setThumbOption] = useState('upload');
   const [imageFile, setImageFile] = useState(null);
   const [thumbFile, setThumbFile] = useState(null);
+  const [refreshTrigger, setRefreshTrigger] = useState(0); // Number-based state to force refresh
+
 
   // Fetch risk profiles, asset types, and gallery images on mount
   useEffect(() => {
@@ -94,8 +101,13 @@ const CreateBasketPage = () => {
     axios.get('http://127.0.0.1:5000/api/pull_gallery')
       .then(res => setGallery(res.data))
       .catch(err => console.error(err));
-  }, []);
+  }, [refreshTrigger]);
 
+  const handleRefresh = () => {
+    console.log("Triggering refresh...");
+    setRefreshTrigger(prev => prev + 1); // Incrementing forces re-render
+  };
+  
   // Handle basket data change
   const handleBasketChange = (e) => {
     const { name, value } = e.target;
@@ -219,6 +231,23 @@ const CreateBasketPage = () => {
 
   };
 
+  
+
+  const handleViewClick = (basket) => {
+    setSelectedBasket(basket);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedBasket(null);
+    setPortfolioMessage('');
+    setRefreshTrigger(prev => prev + 1); // Incrementing forces re-render
+
+
+    
+  };
+
   return (
     <div className="">
       <h1>Existing Baskets</h1>
@@ -231,6 +260,9 @@ const CreateBasketPage = () => {
               <tr key={basket.basket_id}>
             
                 <td> {basket.name} </td><td> { basket.description} </td> <td>{basket.theme} </td> <td>  {basket.status} </td> <td> {basket.risk_profile_name} </td>
+                <td>
+                <button onClick={() => handleViewClick(basket)}>View</button>
+              </td>
                 </tr>
             ))}
           
@@ -244,6 +276,15 @@ const CreateBasketPage = () => {
       <br/><br/>
 
       <hr />
+
+      {selectedBasket && (
+        <BasketModal
+          show={showModal}
+          handleClose={handleCloseModal}
+          basket={selectedBasket}
+          assetTypes={assetTypes}
+        />
+      )}
 
       {/* Button to open modal */}
       {!isModalOpen && (
