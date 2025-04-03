@@ -86,7 +86,7 @@ const CreateBasketPage = () => {
 
   // Fetch risk profiles, asset types, and gallery images on mount
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000/api/risks')
+    axios.get(`${API_BASE_URL}/risks`)
       .then(res => setRiskProfiles(res.data))
       .catch(err => console.error(err));
 
@@ -94,11 +94,11 @@ const CreateBasketPage = () => {
       .then(res => setExistingBaskets(res.data))
       .catch(err => console.error(err));
 
-    axios.get('http://127.0.0.1:5000/api/assets')
+    axios.get(`${API_BASE_URL}/api/assets`)
       .then(res => setAssetTypes(res.data))
       .catch(err => console.error(err));
 
-    axios.get('http://127.0.0.1:5000/api/pull_gallery')
+    axios.get(`${API_BASE_URL}/pull_gallery`)
       .then(res => setGallery(res.data))
       .catch(err => console.error(err));
   }, [refreshTrigger]);
@@ -132,7 +132,7 @@ const CreateBasketPage = () => {
     const formData = new FormData();
     formData.append('file', file);
     try {
-      const response = await axios.post('http://127.0.0.1:5000/api/gallery', formData, {
+      const response = await axios.post(`${API_BASE_URL}/gallery`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       return response.data.url;
@@ -155,7 +155,7 @@ const CreateBasketPage = () => {
     }
     const payload = { ...basketData, image: imageUrl, thumbnail: thumbUrl };
 
-    axios.post('http://127.0.0.1:5000/api/baskets', payload)
+    axios.post(`${API_BASE_URL}/baskets`, payload)
       .then(response => {
         setBasketMessage(`Basket created successfully! ID: ${response.data.basket_id}`);
         setBasketId(response.data.basket_id);
@@ -207,7 +207,7 @@ const CreateBasketPage = () => {
       alert('Please create a basket first');
       return;
     }
-    axios.post(`http://127.0.0.1:5000/api/baskets/${basketId}/portfolio/bulk`, { entries: portfolioEntries })
+    axios.post(`${API_BASE_URL}/baskets/${basketId}/portfolio/bulk`, { entries: portfolioEntries })
       .then(response => {
         setPortfolioMessage('Portfolio entries added successfully in bulk!');
         closeModal(); 
