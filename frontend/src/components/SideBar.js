@@ -45,7 +45,8 @@ const SideBar = () => {
         { menu_name: "Categories", link: "/categories" },
         { menu_name: "Risk Profiles", link: "/risk-profiles" },
         { menu_name: "Questions", link: "/questions" },
-        { menu_name: "Reports", link: "/reports" },
+        { menu_name: "Risk based Watchlist", link: "/baskets" },
+	{ menu_name: "Reports", link: "/reports" },
         { menu_name: "Test Options", link: "/test_options" },
         { menu_name: "Settings", link: "/settings" }
     ];
