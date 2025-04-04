@@ -16,11 +16,11 @@ const AllocationPage = () => {
 
   // Load risk profiles and assets on mount
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000/api/risks')
+    axios.get(`${API_BASE_URL}/risks`)
       .then(res => setRiskProfiles(res.data))
       .catch(err => console.error(err));
       
-    axios.get('http://127.0.0.1:5000/api/assets')
+    axios.get(`${API_BASE_URL}/assets`)
       .then(res => setAssets(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -28,7 +28,7 @@ const AllocationPage = () => {
   // Load allocations when a risk profile is selected
   useEffect(() => {
     if (selectedRisk) {
-      axios.get(`http://127.0.0.1:5000/api/allocations/${selectedRisk}`)
+      axios.get(`${API_BASE_URL}/allocations/${selectedRisk}`)
         .then(res => {
           if (res.data.length === 0) {
             // Initialize allocation to 0% for each asset if no record exists
@@ -53,7 +53,7 @@ const AllocationPage = () => {
 
   const handleSave = () => {
     if (!selectedRisk) return;
-    axios.post('http://127.0.0.1:5000/api/allocations', {
+    axios.post(`${API_BASE_URL}/allocations`, {
       risk_id: selectedRisk,
       allocations: allocations
     })
