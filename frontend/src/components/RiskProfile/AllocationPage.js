@@ -5,8 +5,6 @@ import "./../../styles/styles.css";
 
 
 
-
-
 const AllocationPage = () => {
   const [riskProfiles, setRiskProfiles] = useState([]);
   const [assets, setAssets] = useState([]);
